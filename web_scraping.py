@@ -82,7 +82,7 @@ def list_to_text(link_list : list, role : str):
         text = '\n'.join(map(str, link_list))
         return text
     else:
-        raise "Link List Is Empty"
+        raise TypeError("Link List Is Empty")
 
 
 def is_identical_to_last_result(link_text):
