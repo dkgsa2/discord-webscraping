@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from urllib.parse import urljoin
 from webhook_basic import basic_webhook
-
+import os
 # URL for epic games store
 store_url = "https://www.epicgames.com/store/en-US/"
 
