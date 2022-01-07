@@ -3,7 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from urllib.parse import urljoin
-
 from webhook_basic import basic_webhook
 
 # URL for epic games store
@@ -12,7 +11,7 @@ store_url = "https://www.epicgames.com/store/en-US/"
 # previous results file
 previous_results = r'Previous_Result.txt'
 
-def create_browser(webdriver_path):
+def create_browser():
     """
     create browser to reliably acquire the page
 
@@ -20,12 +19,20 @@ def create_browser(webdriver_path):
     :return browser:
     """
     # create a selenium object that mimics the browser
+
     browser_options = Options()
-    service = Service(webdriver_path)
+    #service = Service(webdriver_path) --legacy
+
     # headless tag created an invisible browser
+    CHROMEDRIVER_PATH = r'/app/.chromedriver/bin/chromedriver'
+    GOOGLE_CHROME_BIN = r'/app/.apt/usr/bin/google-chrome'
+    browser_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     browser_options.add_argument("--headless")
+    browser_options.add_argument("--disable-dev-shm-usage")
     browser_options.add_argument('--no-sandbox')
-    browser = webdriver.Chrome(service=service, options=browser_options)
+    browser = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+
+    #browser = webdriver.Chrome(service=service, options=browser_options) --legacy
     print("Done Creating Browser")
     return browser
 
