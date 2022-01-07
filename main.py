@@ -10,7 +10,7 @@ def main():
 
     :return:
     """
-    webdriver_path = r"E:\Programming\More Stuff\ChromeDriver\chromedriver.exe"
+    webdriver_path = r"chromedriver.exe"
     role = '748634076675833865'
     page = get_page(webdriver_path)
     link_list = find_results(page)

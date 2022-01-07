@@ -10,7 +10,7 @@ from webhook_basic import basic_webhook
 store_url = "https://www.epicgames.com/store/en-US/"
 
 # previous results file
-previous_results = r'E:\Programming\Pycharm\Projects\WebhookFreeGames\Previous_Result.txt'
+previous_results = r'Previous_Result.txt'
 
 def create_browser(webdriver_path):
     """
