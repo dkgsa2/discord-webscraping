@@ -3,7 +3,7 @@ import logging
 
 def logger(text):
     """
-
+    logging
     :param text:
     :return:
     """
@@ -16,6 +16,6 @@ def logger(text):
     logger = logging.getLogger()
 
     # Setting the threshold of logger to DEBUG
-    logger.setLevel(loggingE.DEBUG)
+    logger.setLevel(logging.DEBUG)
     logger.info(text)
 
