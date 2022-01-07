@@ -81,6 +81,8 @@ def list_to_text(link_list : list, role : str):
         link_list.insert(0,formatted_role)
         text = '\n'.join(map(str, link_list))
         return text
+    else:
+        raise "Link List Is Empty"
 
 
 def is_identical_to_last_result(link_text):
