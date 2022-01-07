@@ -21,18 +21,18 @@ def create_browser():
     # create a selenium object that mimics the browser
 
     browser_options = Options()
-    #service = Service(webdriver_path) --legacy
+    service = Service(webdriver_path) --legacy
 
     # headless tag created an invisible browser
-    CHROMEDRIVER_PATH = r'/app/.chromedriver/bin/chromedriver'
-    GOOGLE_CHROME_BIN = r'/app/.apt/usr/bin/google-chrome'
+    #CHROMEDRIVER_PATH = r'/app/.chromedriver/bin/chromedriver'
+    #GOOGLE_CHROME_BIN = r'/app/.apt/usr/bin/google-chrome'
     browser_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     browser_options.add_argument("--headless")
-    browser_options.add_argument("--disable-dev-shm-usage")
+    #browser_options.add_argument("--disable-dev-shm-usage")
     browser_options.add_argument('--no-sandbox')
-    browser = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=browser_options)
+    #browser = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=browser_options)
 
-    #browser = webdriver.Chrome(service=service, options=browser_options) --legacy
+    browser = webdriver.Chrome(service=service, options=browser_options) --legacy
     print("Done Creating Browser")
     return browser
 
