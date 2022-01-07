@@ -1,4 +1,3 @@
-urllib
 selenium
 bs4
 discord_webhook
