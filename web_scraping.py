@@ -30,7 +30,7 @@ def create_browser():
     browser_options.add_argument("--headless")
     browser_options.add_argument("--disable-dev-shm-usage")
     browser_options.add_argument('--no-sandbox')
-    browser = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+    browser = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=browser_options)
 
     #browser = webdriver.Chrome(service=service, options=browser_options) --legacy
     print("Done Creating Browser")
