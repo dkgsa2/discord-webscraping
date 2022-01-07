@@ -37,14 +37,14 @@ def create_browser():
     return browser
 
 
-def get_page(webdriver_path):
+def get_page():
     """
     getting the page and making it into a soup object
 
     :param webdriver_path:
     :return page:
     """
-    browser = create_browser(webdriver_path)
+    browser = create_browser()
     browser.get(store_url)
     page = browser.page_source
     browser.close()
